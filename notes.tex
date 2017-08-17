@@ -1,0 +1,56 @@
+\documentclass{article}
+
+\usepackage[margin=1in]{geometry}
+
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{upgreek}
+\usepackage{pgfplots}
+\usepackage{qtree}
+\usepackage{calc}
+\usepackage[normalem]{ulem}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\begin{document}
+
+\section{Probabilidade}
+A probabilidade é o estudo das experiências aleatórias. \\[10pt]
+\uline{Espaço amostral}: denotado por $\Omega$, é o conjunto de \uline{todos} os resultados possíveis em uma experiência. \\[5pt]
+\uline{Evento}: é um subconjunto de $\Omega$ ao qual é associado uma probabilidade em \uline{uma} amostragem aleatória.
+\vspace{-3pt}
+\begin{tabbing}
+  \uline{Família de eventos}: \= é um conjunto de eventos. A maior família de eventos é o conjunto potência de $\Omega$, \\
+  \> denotado $\mathcal{P}(\Omega)$.
+\end{tabbing}
+Propriedades das famílias de eventos:
+\begin{itemize}
+  \item $\Omega \in \mathcal{F}$
+  \item $A \in \mathcal{F} \implies A^c \in \mathcal{F}$
+  \item $A, B \in \mathcal{F} \implies (A \cup B) \in \mathcal{F}$
+\end{itemize}
+
+
+\subsection{Função Probabilidade}
+Uma função probabilidade é uma função do tipo $P:\, \mathcal{F} \to [0, 1]$. \\[5pt]
+Propriedades de uma função probabilidade:
+\begin{itemize}
+  \item $0 \leq P(A) \leq 1$
+  \item $P(\Omega) = 1$,\enspace $P(\varnothing) = 0$
+  \item Se $A, B \in \mathcal{F}$ são eventos \uline{disjuntos}, então $P(A \cup B) = P(A) + P(B)$
+\end{itemize}
+
+
+\subsection{Espaço de Probabilidade}
+Um espaço de probabilidade é uma tripla da forma $(\Omega, \mathcal{F}, P)$. \\
+O espaço é associado à uma experiência aleatória.
+
+
+\subsection{Espaços Equiparáveis}
+Um espaço de probabilidade $(\Omega, \mathcal{F}, P)$ é equiprovável quando
+\[ \forall A, B \in \Omega: \> P(A) = P(B) = \frac{1}{\mid \Omega \mid} \]
+
+
+
+\end{document}
