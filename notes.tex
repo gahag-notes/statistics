@@ -59,8 +59,34 @@ A função de probabilidade clássica para espaços \uline{equiprováveis} é
 
 
 \subsection{Probabilidade Condicional}
-A probabilidade de um evento $B$ acontecer após um evento $A$ é
+A probabilidade de um evento $B$ acontecer dado um evento $A$ é
 \[ P(B|A) = \frac{P(A \cap B)}{P(A)} \]
+\uline{Teorema de Bayes}:
+\[ P(B|A) = \frac{P(B)}{P(A)} \cdot P(A|B) \]
+
+
+\subsection{Probabilidade Total}
+
+\subsubsection{Partição}
+Sejam os eventos $A_1, \hdots, A_n$. O conjunto $\{ A_1, A_n \}$ forma uma partição de $\Omega$ se e somente se
+\begin{itemize}
+  \item Os eventos são disjuntos entre si: $\forall \, i \neq j: A_i \cap A_j = \varnothing$
+  \item $A_1 \cup \cdots \cup A_n = \Omega$
+\end{itemize}
+\uline{Teorema}:
+\[ P(B) = \sum_{k = 1}^{n} P(A_k) \cdot P(B|A_k) \]
+
+\subsubsection{Independência}
+Dois eventos $A$ e $B$ são independentes se e somente se
+\[ P(A \cap B) = P(A) \cdot P(B) \]
+Portanto, elementos disjuntos \uline{não são independentes}, pois não podem ocorrer simultaneamente. \\[10pt]
+\uline{Corolário}: Se $A$ e $B$ são independentes, então $P(A|B) = P(A)$. \\[10pt]
+Propriedade: Se $A$ e $B$ são independentes, então os seguintes conjuntos são independentes entre si:
+\begin{itemize}
+  \item $A$ e $B^c$
+  \item $A^c$ e $B$
+  \item $A^c$ e $B^c$
+\end{itemize}
 
 
 
