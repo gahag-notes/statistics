@@ -90,12 +90,22 @@ Propriedade: Se $A$ e $B$ são independentes, então os seguintes conjuntos são
 
 
 \subsection{Variáveis Aleatórias}
-Uma variável aleatória é uma função do tipo
+Uma variável aleatória é uma função que associa alguma propriedade de dado resultado à um número real.
 \[ X: \Omega \to \mathbb{R} \]
-que associa alguma propriedade de dado resultado à um número real. \\[5pt]
-A probabilidade de uma variável aleatória assumir um valor $k \in \mathbb{R}$ é
-\[ P(X = k) \]
-A distribuição de uma variável aleatória é o gráfico de $P(X = k)$ por todos $k$ possíveis.
+A probabilidade de uma variável aleatória assumir um valor $c \in \mathbb{R}$ é
+\[ P(X = c) \]
+Se a imagem de $X$ é um conjunto enumerável, dizemos que esta variável é \uline{discreta}. \\[5pt]
+
+\subsubsection{Distruibuição}
+A distribuição de uma variável aleatória é definida por
+\[ P(X = x_k) \:\big|\: k \in \mathbb{N}^* \]
+Propriedades:
+\begin{itemize}
+  \item $0 \leq P(X = x_k) \leq 1$
+  \item $\sum\limits_k P(X = x_k) = 1$
+\end{itemize}
+% example here: distribuição bernoulli, uniforme e binomial.
+
 
 
 \end{document}
