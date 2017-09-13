@@ -95,6 +95,7 @@ Uma variável aleatória é uma função que associa alguma propriedade de dado 
 A probabilidade de uma variável aleatória assumir um valor $c \in \mathbb{R}$ é
 \[ P(X = c) \]
 Se a imagem de $X$ é um conjunto enumerável, dizemos que esta variável é \uline{discreta}. \\[5pt]
+Se a imagem de $X$ é um conjunto não enumerável, dizemos que esta variável é \uline{contínua}. \\[5pt]
 
 \subsubsection{Distruibuição}
 A distribuição de uma variável aleatória é definida por
@@ -104,8 +105,36 @@ Propriedades:
   \item $0 \leq P(X = x_k) \leq 1$
   \item $\sum\limits_k P(X = x_k) = 1$
 \end{itemize}
-% example here: distribuição uniforme, bernoulli, binomial, poisson, geométrica.
+% example here: distribuição uniforme, bernoulli, binomial, poisson, geométrica
+.
 
+
+\subsection{Densidade}
+A probabilidade de uma variável \uline{contínua} estar em um invervalo $[a,b]$ é
+\[ P(a \leq X \leq b) = \int_b^a f(x) dx, \qquad f: \mathbb{R} \to \mathbb{R}^+ \]
+onde $f$ é a função de densidade de probabilidade associada a $X$. \\[10pt]
+Uma função de densidade de probabilidade satisfaz as propriedades:
+\begin{itemize}
+  \item $\forall\, x \in \mathbb{R}: f(x) \geq 0$.
+  \item $\int\limits_{-\infty}^{\infty} f(x) dx = 1$.
+\end{itemize}
+
+\subsubsection{Distribuição Uniforme}
+A função densidade para uma ditribuição uniforme é
+\[
+  f(x) = \begin{cases}
+          \dfrac{1}{\omega} \quad 0 \leq x \leq \omega \\[10pt]
+          0 \quad \text{caso contrário}
+         \end{cases}
+\]
+Já para uma distribuição uniforme reduzida a um intervalo $[a,b] \subset \mathbb{R}$
+\begin{gather*}
+  f(x) = \begin{cases}
+          \dfrac{1}{b - a} \quad a \leq x \leq b \\[10pt]
+          0 \qquad \text{caso contrário}
+         \end{cases} \\[10pt]
+  P(m \leq x \leq n) = f(n) - f(m)
+\end{gather*}
 
 
 \end{document}
