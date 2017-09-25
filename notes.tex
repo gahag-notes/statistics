@@ -12,6 +12,7 @@
 \usepackage[normalem]{ulem}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
 
 \begin{document}
 
@@ -135,6 +136,22 @@ Já para uma distribuição uniforme reduzida a um intervalo $[a,b] \subset \mat
          \end{cases} \\[10pt]
   P(m \leq x \leq n) = f(n) - f(m)
 \end{gather*}
+
+\pagebreak
+
+\subsection{Esperança Matemática}
+Dada uma variável aleatória $X$, a esperança matemática de $X$ é
+\begin{align*}
+  & E(X) = \sum_{k=1}^{\infty} x_k \cdot P(X = x_k) && \text{$X$ discreto.} \\[5pt]
+  & E(X) = \int_{-\infty}^{\infty} x \cdot f(x) \: dx && \text{$X$ contínuo.}
+\end{align*}
+Propriedades:
+\begin{itemize}
+  \item $\forall\: a \in \mathbb{R}: E(a) = a$
+  \item $\forall\: a \in \mathbb{R}: E(aX) = a \cdot E(X)$
+  \item $E(X + Y) = E(X) + E(Y)$
+\end{itemize}
+
 
 
 \end{document}
