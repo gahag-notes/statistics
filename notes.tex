@@ -150,7 +150,31 @@ Propriedades:
   \item $\forall\: a \in \mathbb{R}: E(a) = a$
   \item $\forall\: a \in \mathbb{R}: E(aX) = a \cdot E(X)$
   \item $E(X + Y) = E(X) + E(Y)$
+  \item $E(X^2) \geq {E(X)}^2$
 \end{itemize}
+
+\subsection{Variância}
+A variância de uma variável aleatória $X$ é
+\begin{align*}
+  \text{var}(X) & = {E(X - E(X))}^2 \\
+  & = E(X^2) - {E(X)}^2
+\end{align*}
+A covariância de duas variáveis aleatórias $X$ e $Y$ é
+\[ \text{cov}(X, Y) = E(XY) - E(X) \cdot E(Y) \]
+Propriedades:
+\begin{itemize}
+  \item $\forall\: a \in \mathbb{R}: \text{var}(a) = 0$
+  \item $\forall\: a \in \mathbb{R}: \text{var}(aX) = a^2 \cdot \text{var}(X)$
+  \item $\text{var}(X + Y) = \text{var}(X) + \text{var}(Y) + 2 \cdot \text{cov}(X, Y)$
+  \item $X$ e $Y$ independentes $\implies \text{cov}(X,Y) = 0 \implies \text{var}(X + Y) = \text{var}(X) + \text{var}(Y)$
+\end{itemize}
+
+\subsection{Desvio Padrão}
+O desvio padrão de uma variável aleatória $X$ é
+\begin{align*}
+  \text{dp}(X) & = \sqrt{\text{var}(X)} \\
+  & = \sqrt{{E(X - E(X))}^2}
+\end{align*}
 
 
 
