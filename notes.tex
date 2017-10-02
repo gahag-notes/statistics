@@ -119,6 +119,8 @@ Uma função de densidade de probabilidade satisfaz as propriedades:
   \item $\forall\, x \in \mathbb{R}: f(x) \geq 0$.
   \item $\int\limits_{-\infty}^{\infty} f(x) dx = 1$.
 \end{itemize}
+\uline{Teorema}: Para qualquer distribuição, a probabilidade de uma variável aleatória estar em um intervalo é
+\[ P(m \leq x \leq n) = f(n) - f(m) \]
 
 \subsubsection{Distribuição Uniforme}
 A função densidade para uma ditribuição uniforme é
@@ -129,13 +131,12 @@ A função densidade para uma ditribuição uniforme é
          \end{cases}
 \]
 Já para uma distribuição uniforme reduzida a um intervalo $[a,b] \subset \mathbb{R}$
-\begin{gather*}
+\[
   f(x) = \begin{cases}
           \dfrac{1}{b - a} \quad a \leq x \leq b \\[10pt]
           0 \qquad \text{caso contrário}
          \end{cases} \\[10pt]
-  P(m \leq x \leq n) = f(n) - f(m)
-\end{gather*}
+\]
 
 \pagebreak
 
