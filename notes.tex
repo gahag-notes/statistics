@@ -2,13 +2,15 @@
 
 \usepackage[margin=1in]{geometry}
 
-\usepackage{lmodern}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{upgreek}
+\usepackage{booktabs}
+\usepackage{calc}
+\usepackage{lmodern}
+\usepackage{multirow,multicol}
 \usepackage{pgfplots}
 \usepackage{qtree}
-\usepackage{calc}
+\usepackage{upgreek}
 \usepackage[normalem]{ulem}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -17,9 +19,30 @@
 \begin{document}
 
 \section{Probabilidade}
-A probabilidade é o estudo das experiências aleatórias. \\[10pt]
-\uline{Espaço amostral}: denotado por $\Omega$, é o conjunto de \uline{todos} os resultados possíveis em uma experiência. \\[5pt]
-\uline{Evento}: é um subconjunto de $\Omega$ ao qual é associado uma probabilidade em \uline{uma} amostragem aleatória.
+A probabilidade é o estudo das experiências aleatórias.
+\vspace{-5pt}
+\begin{table}[h]
+  \begin{tabular}{ll}
+    \multicolumn{2}{l}{\hspace{-6pt}\textbf{Conceitos fundamentais}} \\ \midrule
+     Experimento aleatório & Experimento cujo resultado não pode ser previsto com exatidão. \\[1pt]
+     Espaço amostral ($\Omega$) & O conjunto de \uline{todos} os resultados possíveis em uma experiência. \\[1pt]
+     Evento & Um subconjunto de $\Omega$. \\[1pt]
+  \end{tabular}
+\end{table} \vspace{-10pt}
+
+
+\subsection{Função Probabilidade}
+Uma função probabilidade é uma função do tipo $P:\, \mathcal{F} \to [0, 1]$. \\[5pt]
+Propriedades de uma função probabilidade:
+\begin{itemize}
+  \item $P(\Omega) = 1$,\enspace $P(\varnothing) = 0$
+  \item $0 \leq P(A) \leq 1$
+  \item $\forall \: A_1, A_2, \hdots, A_n \text{ disjuntos}:\: P\left(\bigcup\limits_{i=1}^{\infty} A_i\right) = \sum\limits_{i=1}^{\infty} P(A_i)$
+  \item $P(A^c) = 1 - P(A)$
+  \item $A \subseteq B \implies P(A) \leq P(B)$
+  \item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+\end{itemize}
+%% old --------------------------------------------------------------------
 
 
 \subsection{Famílias de Eventos}
@@ -30,18 +53,6 @@ Propriedades das famílias de eventos:
   \item $\Omega \in \mathcal{F}$
   \item $A \in \mathcal{F} \implies A^c \in \mathcal{F}$
   \item $A, B \in \mathcal{F} \implies (A \cup B) \in \mathcal{F}$
-\end{itemize}
-
-
-\subsection{Função Probabilidade}
-Uma função probabilidade é uma função do tipo $P:\, \mathcal{F} \to [0, 1]$. \\[5pt]
-Propriedades de uma função probabilidade:
-\begin{itemize}
-  \item $0 \leq P(A) \leq 1$
-  \item $P(\Omega) = 1$,\enspace $P(\varnothing) = 0$
-  \item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
-  \item $P(A^c) = 1 - P(A)$
-  \item $A \subseteq B \implies P(A) \leq P(B)$
 \end{itemize}
 
 
@@ -176,6 +187,14 @@ O desvio padrão de uma variável aleatória $X$ é
   \text{dp}(X) & = \sqrt{\text{var}(X)} \\
   & = \sqrt{{E(X - E(X))}^2}
 \end{align*}
+
+\pagebreak
+
+\subsection{Densidade Normal Geral}
+\begin{gather*}
+  X \sim N(\mu, \sigma^2) \\[5pt]
+  f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} \cdot \exp \left(- \frac{{(x - u)}^2}{2\sigma^2} \right)
+\end{gather*}
 
 
 
