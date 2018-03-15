@@ -56,6 +56,30 @@ A probabilidade de um evento $B$ acontecer dado um evento $A$ é
 \[ P(B|A) = \frac{P(B)}{P(A)} \cdot P(A|B) \]
 
 
+\subsection{Probabilidade Total}
+
+\subsubsection{Partição}
+O conjunto de eventos $\{ A_1, \hdots, A_n \}$ forma uma partição de $\Omega$ se e somente se
+\begin{itemize}
+  \item $\forall \, i \neq j: A_i \cap A_j = \varnothing$ \quad (Os eventos são disjuntos entre si)
+  \item $\bigcup\limits_{i=1}^{n} A_i = \Omega$
+\end{itemize}
+\uline{Teorema da probabilidade total}: Dada uma partição $\{ A_1, \hdots, A_n \}$
+\[ P(B) = \sum_{i = 1}^{n} P(A_i) \cdot P(B|A_i) \]
+
+\hrule
+
+\subsubsection{Independência}
+Dois eventos $A$ e $B$ são independentes se e somente se
+\[ P(A \cap B) = P(A) \cdot P(B) \]
+Portanto, elementos disjuntos \uline{não são independentes}, pois não podem ocorrer simultaneamente. \\[10pt]
+\uline{Corolário}: Se $A$ e $B$ são independentes, então $P(A|B) = P(A)$. \\[10pt]
+Propriedade: Se $A$ e $B$ são independentes, então os seguintes conjuntos são independentes entre si:
+\begin{itemize}
+  \item $A$ e $B^c$
+  \item $A^c$ e $B$
+  \item $A^c$ e $B^c$
+\end{itemize}
 
 %% old --------------------------------------------------------------------
 \hrule
@@ -78,30 +102,6 @@ O espaço é associado à uma experiência aleatória.
 \subsubsection{Espaços Equiprováveis}
 Um espaço de probabilidade $(\Omega, \mathcal{F}, P)$ é equiprovável quando
 \[ \forall \, a, b \in \Omega: \> P({a}) = P({b}) = \frac{1}{\mid \Omega \mid} \]
-
-
-\subsection{Probabilidade Total}
-
-\subsubsection{Partição}
-Sejam os eventos $A_1, \hdots, A_n$. O conjunto $\{ A_1, A_n \}$ forma uma partição de $\Omega$ se e somente se
-\begin{itemize}
-  \item Os eventos são disjuntos entre si: $\forall \, i \neq j: A_i \cap A_j = \varnothing$
-  \item $A_1 \cup \cdots \cup A_n = \Omega$
-\end{itemize}
-\uline{Teorema}:
-\[ P(B) = \sum_{k = 1}^{n} P(A_k) \cdot P(B|A_k) \]
-
-\subsubsection{Independência}
-Dois eventos $A$ e $B$ são independentes se e somente se
-\[ P(A \cap B) = P(A) \cdot P(B) \]
-Portanto, elementos disjuntos \uline{não são independentes}, pois não podem ocorrer simultaneamente. \\[10pt]
-\uline{Corolário}: Se $A$ e $B$ são independentes, então $P(A|B) = P(A)$. \\[10pt]
-Propriedade: Se $A$ e $B$ são independentes, então os seguintes conjuntos são independentes entre si:
-\begin{itemize}
-  \item $A$ e $B^c$
-  \item $A^c$ e $B$
-  \item $A^c$ e $B^c$
-\end{itemize}
 
 
 \subsection{Variáveis Aleatórias}
