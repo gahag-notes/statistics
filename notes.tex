@@ -57,9 +57,7 @@ A probabilidade de um evento $B$ acontecer dado um evento $A$ é
 
 
 \subsection{Probabilidade Total}
-
-\subsubsection{Partição}
-O conjunto de eventos $\{ A_1, \hdots, A_n \}$ forma uma partição de $\Omega$ se e somente se
+O conjunto de eventos $\{ A_1, \hdots, A_n \}$ forma uma \uline{partição} de $\Omega$ se e somente se
 \begin{itemize}
   \item $\forall \, i \neq j: A_i \cap A_j = \varnothing$ \quad (Os eventos são disjuntos entre si)
   \item $\bigcup\limits_{i=1}^{n} A_i = \Omega$
@@ -67,13 +65,13 @@ O conjunto de eventos $\{ A_1, \hdots, A_n \}$ forma uma partição de $\Omega$ 
 \uline{Teorema da probabilidade total}: Dada uma partição $\{ A_1, \hdots, A_n \}$
 \[ P(B) = \sum_{i = 1}^{n} P(A_i) \cdot P(B|A_i) \]
 
-\hrule
 
-\subsubsection{Independência}
+\subsection{Independência}
 Dois eventos $A$ e $B$ são independentes se e somente se
 \[ P(A \cap B) = P(A) \cdot P(B) \]
-Portanto, elementos disjuntos \uline{não são independentes}, pois não podem ocorrer simultaneamente. \\[10pt]
 \uline{Corolário}: Se $A$ e $B$ são independentes, então $P(A|B) = P(A)$. \\[10pt]
+Isto significa que a ocorrência de um evento não afeta a probabilidade do outro numa mesma amostra. \\
+Portanto, eventos disjuntos \uline{não são independentes}, pois não podem ocorrer simultaneamente. \\[10pt]
 Propriedade: Se $A$ e $B$ são independentes, então os seguintes conjuntos são independentes entre si:
 \begin{itemize}
   \item $A$ e $B^c$
