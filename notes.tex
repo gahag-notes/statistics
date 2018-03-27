@@ -51,19 +51,18 @@ A função de probabilidade clássica para espaços \uline{equiprováveis} é
 
 \subsection{Probabilidade Condicional}
 A probabilidade de um evento $B$ acontecer dado um evento $A$ é
-\[ P(B|A) = \frac{P(A \cap B)}{P(A)} \]
-\uline{Teorema de Bayes}:
-\[ P(B|A) = \frac{P(B)}{P(A)} \cdot P(A|B) \]
-
-
-\subsection{Probabilidade Total}
+\[ P(B|A) = \frac{P(A \cap B)}{P(A)} \] \\
 O conjunto de eventos $\{ A_1, \hdots, A_n \}$ forma uma \uline{partição} de $\Omega$ se e somente se
 \begin{itemize}
   \item $\forall \, i \neq j: A_i \cap A_j = \varnothing$ \quad (Os eventos são disjuntos entre si)
   \item $\bigcup\limits_{i=1}^{n} A_i = \Omega$
 \end{itemize}
+\vspace{5pt}
 \uline{Teorema da probabilidade total}: Dada uma partição $\{ A_1, \hdots, A_n \}$
-\[ P(B) = \sum_{i = 1}^{n} P(A_i) \cdot P(B|A_i) \]
+\[ P(B) = \sum_{i = 1}^{n} P(A_i) \cdot P(B|A_i) \] \\
+\uline{Teorema de Bayes}: Dada uma partição $\{ A_1, \hdots, A_n \}$
+% \[ P(B|A) = \frac{P(B)}{P(A)} \cdot P(A|B) \]
+\[ P(A_i|B) = \frac{P(B|A_i) \cdot P(A_i)}{\sum\limits_{j=1}^{n} P(B|A_j) \cdot P(A_j)} \]
 
 
 \subsection{Independência}
