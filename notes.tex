@@ -78,8 +78,32 @@ Propriedade: Se $A$ e $B$ são independentes, então os seguintes conjuntos são
   \item $A^c$ e $B^c$
 \end{itemize}
 
+
+\subsection{Variáveis Aleatórias}
+Uma variável aleatória é uma função que associa alguma propriedade de um resultado de um experimento aleatório à um número real.
+\[ X: \Omega \to \mathbb{R} \]
+A imagem de uma variável aleatória $X$ é denotada por $R_X$. \\[5pt]
+Se $R_X$ é um conjunto enumerável, dizemos que esta variável é \uline{discreta}. \\
+Se $R_X$ é um conjunto não enumerável, dizemos que esta variável é \uline{contínua}. \\[10pt]
+A função de probabilidade de uma variável aleatória assumir um valor $c \in \mathbb{R}$ é
+\[ P(X = c) \]
+Propriedades:
+\begin{itemize}
+  \item $\forall\: x_i:\> 0 \leq P(X = x_i) \leq 1$
+  \item $\sum\limits_i P(X = x_i) = 1$
+\end{itemize}
+
+\subsubsection{Distruibuição}
+A distribuição de uma variável aleatória é definida por
+\[ \left\{ \big( x_i\,,\: P(X = x_i) \big) \:\Big|\: i \in \mathbb{N}^* \right\} \]
+A distribuição portanto define um gráfico em $\mathbb{R}^2$ das probabilidades associadas aos valores que $X$ assume. \\[10pt]
+A função de distribuição de uma variável aleatória $X$ é
+\[ F(a) = P(X \leq a) \]
+% example here: distribuição uniforme, bernoulli, binomial, poisson, geométrica
+
+
 %% old --------------------------------------------------------------------
-\hrule
+\vspace{10pt}\hrule
 
 \subsection{Famílias de Eventos}
 Uma família de eventos é um conjunto de eventos. \\
@@ -101,25 +125,8 @@ Um espaço de probabilidade $(\Omega, \mathcal{F}, P)$ é equiprovável quando
 \[ \forall \, a, b \in \Omega: \> P({a}) = P({b}) = \frac{1}{\mid \Omega \mid} \]
 
 
-\subsection{Variáveis Aleatórias}
-Uma variável aleatória é uma função que associa alguma propriedade de dado resultado à um número real.
-\[ X: \Omega \to \mathbb{R} \]
-A probabilidade de uma variável aleatória assumir um valor $c \in \mathbb{R}$ é
-\[ P(X = c) \]
-Se a imagem de $X$ é um conjunto enumerável, dizemos que esta variável é \uline{discreta}. \\[5pt]
-Se a imagem de $X$ é um conjunto não enumerável, dizemos que esta variável é \uline{contínua}. \\[5pt]
-
-\subsubsection{Distruibuição}
-A distribuição de uma variável aleatória é definida por
-\[ P(X = x_k) \:\big|\: k \in \mathbb{N}^* \]
-Propriedades:
-\begin{itemize}
-  \item $0 \leq P(X = x_k) \leq 1$
-  \item $\sum\limits_k P(X = x_k) = 1$
-\end{itemize}
-% example here: distribuição uniforme, bernoulli, binomial, poisson, geométrica
-.
-
+% var aleatoria
+% distrib
 
 \subsection{Densidade}
 A probabilidade de uma variável \uline{contínua} estar em um invervalo $[a,b]$ é
