@@ -99,8 +99,53 @@ A distribuição de uma variável aleatória é definida por
 A distribuição portanto define um gráfico em $\mathbb{R}^2$ das probabilidades associadas aos valores que $X$ assume. \\[10pt]
 A função de distribuição de uma variável aleatória $X$ é
 \[ F(a) = P(X \leq a) \]
-% example here: distribuição uniforme, bernoulli, binomial, poisson, geométrica
 
+
+\pagebreak
+
+
+\subsubsection{Esperança}
+Seja $X$ uma variável aleatória com $R_X = \{x_1, \hdots, x_n\}$. \\
+A esperança matemática de $X$ é a média dos valores de $R_X$ ponderada pelas suas probabilidades.
+\[ E(X) = \sum_{i=1}^{n} x_i \cdot P(X = x_i) \] % \text{$X$ discreto.}
+%  & E(X) = \int_{-\infty}^{\infty} x \cdot f(x) \: dx && \text{$X$ contínuo.}
+Propriedades:
+\begin{itemize}
+  \item Se $X = c$, então $E(X) = c \cdot P(X = c) = c$
+  \item Se $Y = f(X)$, então $E(Y) = \sum\limits_{i = 1}^{n} f(x_i) \cdot P(X = x_i)$
+  \item $E(X + Y) = E(X) + E(Y)$
+\end{itemize}
+
+\subsubsection{Variância}
+A variância de uma variável aleatória $X$ é
+\begin{align*}
+  \hspace{80px} \text{var}(X) & = E[{(X - E(X))}^2] && \text{definição clássica de variancia} \\
+  & = E(X^2) - {E(X)}^2 && \text{fórmula reduzida}
+\end{align*}
+%A covariância de duas variáveis aleatórias $X$ e $Y$ é
+%\[ \text{cov}(X, Y) = E(XY) - E(X) \cdot E(Y) \]
+Propriedades:
+\begin{itemize}
+  \item Se $X = c$, então $\text{var}(X) = 0$
+  \item Se $Y = a \cdot X + b$, então $\text{var}(Y) = a^2 \cdot \text{var}(X)$
+\end{itemize}
+
+\subsubsection{Desvio Padrão}
+O desvio padrão de uma variável aleatória $X$ é
+\[ \text{dp}(X) = \sqrt{\text{var}(X)} \]
+
+
+\subsection{Modelos Discretos}
+
+\subsubsection{Modelo Uniforme}
+Seja $X$ uma variável aleatória com $R_X = \{ x_1, \hdots, x_n \}$. Dizemos que $X$ segue o modelo uniforme discreto se
+\[ \forall\: i \in \{ 1, \hdots, n \} :\> P(X = x_i) = \frac{1}{n} \]
+Denota-se $X \sim U\{x_1, \hdots, x_n\}$. \\[10pt]
+Propriedades:
+\begin{itemize}
+  \item $\sum\limits_{i=1}^{n} \frac{1}{n} \quad=\quad \sum\limits_{i=1}^{n} P(X = x_i) \quad=\quad 1$
+  \item $\text{var}(X) = \dfrac{\sum\limits_{i=1}^{n} {x_i}^2}{n} - {\left( \dfrac{\sum\limits_{i=1}^{n} x_i}{n} \right)}^2$
+\end{itemize}
 
 %% old --------------------------------------------------------------------
 \vspace{10pt}\hrule
@@ -158,44 +203,9 @@ Já para uma distribuição uniforme reduzida a um intervalo $[a,b] \subset \mat
 
 \pagebreak
 
-\subsection{Esperança Matemática}
-Dada uma variável aleatória $X$, a esperança matemática de $X$ é
-\begin{align*}
-  & E(X) = \sum_{k=1}^{\infty} x_k \cdot P(X = x_k) && \text{$X$ discreto.} \\[5pt]
-  & E(X) = \int_{-\infty}^{\infty} x \cdot f(x) \: dx && \text{$X$ contínuo.}
-\end{align*}
-Propriedades:
-\begin{itemize}
-  \item $\forall\: a \in \mathbb{R}: E(a) = a$
-  \item $\forall\: a \in \mathbb{R}: E(aX) = a \cdot E(X)$
-  \item $E(X + Y) = E(X) + E(Y)$
-  \item $E(X^2) \geq {E(X)}^2$
-\end{itemize}
-
-\subsection{Variância}
-A variância de uma variável aleatória $X$ é
-\begin{align*}
-  \text{var}(X) & = {E(X - E(X))}^2 \\
-  & = E(X^2) - {E(X)}^2
-\end{align*}
-A covariância de duas variáveis aleatórias $X$ e $Y$ é
-\[ \text{cov}(X, Y) = E(XY) - E(X) \cdot E(Y) \]
-Propriedades:
-\begin{itemize}
-  \item $\forall\: a \in \mathbb{R}: \text{var}(a) = 0$
-  \item $\forall\: a \in \mathbb{R}: \text{var}(aX) = a^2 \cdot \text{var}(X)$
-  \item $\text{var}(X + Y) = \text{var}(X) + \text{var}(Y) + 2 \cdot \text{cov}(X, Y)$
-  \item $X$ e $Y$ independentes $\implies \text{cov}(X,Y) = 0 \implies \text{var}(X + Y) = \text{var}(X) + \text{var}(Y)$
-\end{itemize}
-
-\subsection{Desvio Padrão}
-O desvio padrão de uma variável aleatória $X$ é
-\begin{align*}
-  \text{dp}(X) & = \sqrt{\text{var}(X)} \\
-  & = \sqrt{{E(X - E(X))}^2}
-\end{align*}
-
-\pagebreak
+% esperança
+% variancia
+% dp
 
 \subsection{Densidade Normal Geral}
 \begin{gather*}
