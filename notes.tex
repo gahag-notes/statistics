@@ -43,13 +43,11 @@ Propriedades de uma função probabilidade:
   \item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
 \end{itemize}
 
-
-\subsection{Probabilidade Clássica}
+\subsubsection{Probabilidade Clássica}
 A função de probabilidade clássica para espaços \uline{equiprováveis} é
 \[ P(A) = \frac{\mid A \mid}{\mid \Omega \mid} \]
 
-
-\subsection{Probabilidade Condicional}
+\subsubsection{Probabilidade Condicional}
 A probabilidade de um evento $B$ acontecer dado um evento $A$ é
 \[ P(B|A) = \frac{P(A \cap B)}{P(A)} \] \\
 O conjunto de eventos $\{ A_1, \hdots, A_n \}$ forma uma \uline{partição} de $\Omega$ se e somente se
@@ -64,8 +62,7 @@ O conjunto de eventos $\{ A_1, \hdots, A_n \}$ forma uma \uline{partição} de $
 % \[ P(B|A) = \frac{P(B)}{P(A)} \cdot P(A|B) \]
 \[ P(A_i|B) = \frac{P(B|A_i) \cdot P(A_i)}{\sum\limits_{j=1}^{n} P(B|A_j) \cdot P(A_j)} \]
 
-
-\subsection{Independência}
+\subsubsection{Independência}
 Dois eventos $A$ e $B$ são independentes se e somente se
 \[ P(A \cap B) = P(A) \cdot P(B) \]
 \uline{Corolário}: Se $A$ e $B$ são independentes, então $P(A|B) = P(A)$. \\[10pt]
@@ -119,7 +116,7 @@ Propriedades:
 \subsubsection{Variância}
 A variância de uma variável aleatória $X$ é
 \begin{align*}
-  \hspace{80px} \text{var}(X) & = E[{(X - E(X))}^2] && \text{definição clássica de variancia} \\
+  \hspace{80px} \text{var}(X) & = E[{(X - E(X))}^2] && \text{definição clássica de variância} \\
   & = E(X^2) - {E(X)}^2 && \text{fórmula reduzida}
 \end{align*}
 %A covariância de duas variáveis aleatórias $X$ e $Y$ é
@@ -145,6 +142,44 @@ Propriedades:
 \begin{itemize}
   \item $\sum\limits_{i=1}^{n} \frac{1}{n} \quad=\quad \sum\limits_{i=1}^{n} P(X = x_i) \quad=\quad 1$
   \item $\text{var}(X) = \dfrac{\sum\limits_{i=1}^{n} {x_i}^2}{n} - {\left( \dfrac{\sum\limits_{i=1}^{n} x_i}{n} \right)}^2$
+\end{itemize}
+
+\subsubsection{Modelo de Bernoulli}
+Seja $X$ uma variável aleatória com $R_X = \{ x_1, x_2 \}$, sendo $x_1$ o sucesso do experimento, e $x_2$ o fracasso. \\
+Dizemos que $X$ segue o modelo discreto de Bernoulli com parâmetro $p$ se
+\[ 0 < p < 1 \]
+\vspace{-20pt}
+\begin{align*}
+  &P(X = x_1) = p \\
+  &P(X = x_2) = 1 - p
+\end{align*}
+Denota-se $X \sim \text{Ber}(p)$. \\[10pt]
+Propriedades:
+\begin{itemize}
+  \item $E(X) = p$
+  \item $\text{var}(X) = p$
+\end{itemize}
+
+\subsubsection{Modelo Binomial}
+Seja $X$ uma variável aleatória que conta os sucessos em $n$ experimentos de Bernoulli($p$). \\
+A probabilidade de $k$ sucessos é
+\[ P(X = k) \>=\> {n \choose k} \cdot p^k \cdot {(1 - p)}^{(n - k)} \]
+Denota-se $X \sim \text{Bin}(n,p)$. \\[10pt]
+Propriedades:
+\begin{itemize}
+  \item $E(X) = np$
+  \item $\text{var}(X) = np \cdot (1 - p)$
+\end{itemize}
+
+\subsubsection{Modelo Geométrico}
+Seja $X$ uma variável aleatória que conta as amostras até o primeiro sucesso em experimentos de Bernoulli($p$). \\
+A probabilidade de $k$ amostras até o sucesso é
+\[ P(X = k) \>=\> p \cdot {(1 - p)}^{(k - 1)} \]
+Denota-se $X \sim \text{Geo}(p)$. \\[10pt]
+Propriedades:
+\begin{itemize}
+  \item $E(X) = \dfrac{1}{p}$
+  \item $\text{var}(X) = \dfrac{1 - p}{p^2}$
 \end{itemize}
 
 %% old --------------------------------------------------------------------
