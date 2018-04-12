@@ -16,6 +16,14 @@
 \usepackage[T1]{fontenc}
 \usepackage[hidelinks]{hyperref}
 
+
+\newcommand{\Binom}[2]{%
+  \left(
+    \begin{array}{@{}c@{\,}} #1\\#2 \end{array}
+  \right)
+}
+
+
 \begin{document}
 
 \section{Probabilidade}
@@ -180,6 +188,31 @@ Propriedades:
 \begin{itemize}
   \item $E(X) = \dfrac{1}{p}$
   \item $\text{var}(X) = \dfrac{1 - p}{p^2}$
+\end{itemize}
+
+\pagebreak
+
+\subsubsection{Modelo Binomial Negativo}
+Seja $X$ uma variável aleatória que conta os sucessos em experimentos de Bernoulli($p$). \\
+A probabilidade de $k$ amostras até se obter $r$ sucessos é
+\[ P(X = k) \>=\> {{k -1} \choose {r - 1}} \cdot p^r \cdot {(1 - p)}^{(k - r)} \]
+Denota-se $X \sim \text{BN}(r, p)$. \\[10pt]
+Propriedades:
+\begin{itemize}
+  \item $E(X) = \dfrac{r}{p}$
+  \item $\text{var}(X) = \dfrac{r \cdot (1 - p)}{p^2}$
+\end{itemize}
+
+\subsubsection{Modelo Hipergeométrico}
+Considere $N$ objetos, dos quais $K$ são do tipo $\Gamma$ e os demais de outro tipo. \\
+Seja $X$ uma variável aleatória que conta o número de objetos do tipo $\Gamma$ em uma amostra de $n$ objetos. \\
+A probabilidade de haver $k$ objetos deste tipo na amostra é
+\[ P(X = k) \>=\> \frac{\Binom{K}{k} \cdot \Binom{N - K}{n - k}}{\Binom{N}{n}} \]
+Denota-se $X \sim \text{HG}(K, N, n)$. \\[10pt]
+Propriedades:
+\begin{itemize}
+  \item $E(X) = \dfrac{nK}{N}$
+  \item $\text{var}(X) = \dfrac{nK}{N} \cdot \left( 1 - \dfrac{nK}{N} \right) \cdot \dfrac{N - n}{N - 1}$
 \end{itemize}
 
 %% old --------------------------------------------------------------------
