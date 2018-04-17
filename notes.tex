@@ -17,6 +17,8 @@
 \usepackage[hidelinks]{hyperref}
 
 
+\newcommand*\diff{\mathop{}\!d}
+
 \newcommand{\Binom}[2]{%
   \left(
     \begin{array}{@{}c@{\,}} #1\\#2 \end{array}
@@ -26,20 +28,20 @@
 
 \begin{document}
 
-\section{Probabilidade}
-A probabilidade é o estudo das experiências aleatórias.
-\vspace{-5pt}
+
 \begin{table}[h]
   \begin{tabular}{ll}
     \multicolumn{2}{l}{\hspace{-6pt}\textbf{Conceitos fundamentais}} \\ \midrule
-     Experimento aleatório & Experimento cujo resultado não pode ser previsto com exatidão. \\[1pt]
-     Espaço amostral ($\Omega$) & O conjunto de \uline{todos} os resultados possíveis em uma experiência. \\[1pt]
-     Evento & Um subconjunto de $\Omega$. \\[1pt]
+    \multicolumn{2}{l}{A probabilidade é o estudo das experiências aleatórias.} \\[5pt]
+    Experimento aleatório & Experimento cujo resultado não pode ser previsto com exatidão. \\[1pt]
+    Espaço amostral ($\Omega$) & O conjunto de \uline{todos} os resultados possíveis em uma experiência. \\[1pt]
+    Evento & Um subconjunto de $\Omega$. \\[1pt]
   \end{tabular}
 \end{table} \vspace{-10pt}
 
 
-\subsection{Função Probabilidade}
+
+\section{Função Probabilidade}
 Uma função probabilidade é uma função do tipo $P:\, \mathcal{P}(\Omega) \to [0, 1]$. \\[5pt]
 Propriedades de uma função probabilidade:
 \begin{itemize}
@@ -51,11 +53,13 @@ Propriedades de uma função probabilidade:
   \item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
 \end{itemize}
 
-\subsubsection{Probabilidade Clássica}
+
+\subsection{Probabilidade Clássica}
 A função de probabilidade clássica para espaços \uline{equiprováveis} é
 \[ P(A) = \frac{\mid A \mid}{\mid \Omega \mid} \]
 
-\subsubsection{Probabilidade Condicional}
+
+\subsection{Probabilidade Condicional}
 A probabilidade de um evento $B$ acontecer dado um evento $A$ é
 \[ P(B|A) = \frac{P(A \cap B)}{P(A)} \] \\
 O conjunto de eventos $\{ A_1, \hdots, A_n \}$ forma uma \uline{partição} de $\Omega$ se e somente se
@@ -70,7 +74,8 @@ O conjunto de eventos $\{ A_1, \hdots, A_n \}$ forma uma \uline{partição} de $
 % \[ P(B|A) = \frac{P(B)}{P(A)} \cdot P(A|B) \]
 \[ P(A_i|B) = \frac{P(B|A_i) \cdot P(A_i)}{\sum\limits_{j=1}^{n} P(B|A_j) \cdot P(A_j)} \]
 
-\subsubsection{Independência}
+
+\subsection{Independência}
 Dois eventos $A$ e $B$ são independentes se e somente se
 \[ P(A \cap B) = P(A) \cdot P(B) \]
 \uline{Corolário}: Se $A$ e $B$ são independentes, então $P(A|B) = P(A)$. \\[10pt]
@@ -84,7 +89,8 @@ Propriedade: Se $A$ e $B$ são independentes, então os seguintes conjuntos são
 \end{itemize}
 
 
-\subsection{Variáveis Aleatórias}
+
+\section{Variáveis Aleatórias}
 Uma variável aleatória é uma função que associa alguma propriedade de um resultado de um experimento aleatório à um número real.
 \[ X: \Omega \to \mathbb{R} \]
 A imagem de uma variável aleatória $X$ é denotada por $R_X$. \\[5pt]
@@ -92,24 +98,55 @@ Se $R_X$ é um conjunto enumerável, dizemos que esta variável é \uline{discre
 Se $R_X$ é um conjunto não enumerável, dizemos que esta variável é \uline{contínua}. \\[10pt]
 A função de probabilidade de uma variável aleatória assumir um valor $c \in \mathbb{R}$ é
 \[ P(X = c) \]
-Propriedades:
+Propriedades: \\[5pt]
+Se $X$ for uma varíavel aleatória \uline{discreta}:
 \begin{itemize}
   \item $\forall\: x_i:\> 0 \leq P(X = x_i) \leq 1$
   \item $\sum\limits_i P(X = x_i) = 1$
 \end{itemize}
+\vspace{-5pt}
+Se $X$ for uma variável aleatória \uline{contínua}:
+\begin{multicols}{2}
+  \begin{itemize}
+    \item $\forall\: a, b:\> 0 \leq P(X \in [a,b\,]) \leq 1$
+    \item $\int P(X = x) \diff x = 1$
+    \item $P(X = a) = 0$
+    \item $P(a \leq X \leq b) = P(a < X < b)$
+  \end{itemize}
+\end{multicols}
 
-\subsubsection{Distruibuição}
+
+\subsection{Densidade}
+Uma variável aleatória $X$ é \uline{contínua} se existe uma função associada $f(x)$ tal que
+\begin{align*}
+  \forall\, x: f(x) \geq 0& \\
+  \int f(x) \diff x = 1&
+\end{align*}
+Tal função é chamada função de densidade da variável aleatória $X$. \\[10pt]
+A função de probabilidade para uma variável aleatória contínua $X$ é
+\[ P\big(X \in [a, b\hspace{0.1pt}]\big) = \int\limits_a^b f(x) \diff x \]
+
+
+\subsection{Distruibuição}
 A distribuição de uma variável aleatória é definida por
-\[ \left\{ \big( x_i\,,\: P(X = x_i) \big) \:\Big|\: i \in \mathbb{N}^* \right\} \]
+\[ \left\{ \big( x\,,\: P(X = x) \big) \:\Big|\: x \in R_X \right\} \]
 A distribuição portanto define um gráfico em $\mathbb{R}^2$ das probabilidades associadas aos valores que $X$ assume. \\[10pt]
 A função de distribuição de uma variável aleatória $X$ é
-\[ F(a) = P(X \leq a) \]
+\begin{align*}
+  F(a) =&\> P(X \leq a) \\[10pt]
+  \hspace{120px} F(a) =& \sum\limits_{x \in R_X}^{a} P(X = x) && \text{$X$ discreta.} \\[5pt]
+  F(a) =& \int\limits_{-\infty}^a f(x) \diff x && \text{$X$ contínua.}
+\end{align*}
 
 
-\pagebreak
+\subsection{Esperança}
+A esperança é uma função que dá o valor esperado de uma variável aleatória. \\[5pt]
+Propriedades:
+\begin{itemize}
+  \item $E(X + Y) = E(X) + E(Y)$
+\end{itemize}
 
-
-\subsubsection{Esperança}
+\subsubsection{Variável Aleatória Discreta}
 Seja $X$ uma variável aleatória com $R_X = \{x_1, \hdots, x_n\}$. \\
 A esperança matemática de $X$ é a média dos valores de $R_X$ ponderada pelas suas probabilidades.
 \[ E(X) = \sum_{i=1}^{n} x_i \cdot P(X = x_i) \] % \text{$X$ discreto.}
@@ -118,41 +155,61 @@ Propriedades:
 \begin{itemize}
   \item Se $X = c$, então $E(X) = c \cdot P(X = c) = c$
   \item Se $Y = f(X)$, então $E(Y) = \sum\limits_{i = 1}^{n} f(x_i) \cdot P(X = x_i)$
-  \item $E(X + Y) = E(X) + E(Y)$
 \end{itemize}
 
-\subsubsection{Variância}
+\subsubsection{Variável Aleatória Contínua}
+Seja $X$ uma variável aleatória com função de densidade $f(x)$. \\
+A esperança de $X$ é dada por
+\[ E(X) = \int x \cdot f(x) \> \diff x \]
+
+
+\pagebreak
+
+
+\subsection{Variância}
 A variância de uma variável aleatória $X$ é
 \begin{align*}
   \hspace{80px} \text{var}(X) & = E[{(X - E(X))}^2] && \text{definição clássica de variância} \\
   & = E(X^2) - {E(X)}^2 && \text{fórmula reduzida}
 \end{align*}
-%A covariância de duas variáveis aleatórias $X$ e $Y$ é
-%\[ \text{cov}(X, Y) = E(XY) - E(X) \cdot E(Y) \]
+
+\subsubsection{Variável Aleatória Discreta}
+Seja $X$ uma variável aleatória discreta. \\[5pt]
 Propriedades:
 \begin{itemize}
   \item Se $X = c$, então $\text{var}(X) = 0$
   \item Se $Y = a \cdot X + b$, então $\text{var}(Y) = a^2 \cdot \text{var}(X)$
 \end{itemize}
 
-\subsubsection{Desvio Padrão}
+\subsubsection{Variável Aleatória Contínua}
+Seja $X$ uma variável aleatória com função de densidade $f(x)$. \\
+\[ E(X^2) = \int x^2 \cdot f(x) \> \diff x\]
+
+
+\subsection{Desvio Padrão}
 O desvio padrão de uma variável aleatória $X$ é
 \[ \text{dp}(X) = \sqrt{\text{var}(X)} \]
 
 
-\subsection{Modelos Discretos}
 
-\subsubsection{Modelo Uniforme}
+\section{Modelos Discretos}
+
+
+\subsection{Modelo Uniforme}
 Seja $X$ uma variável aleatória com $R_X = \{ x_1, \hdots, x_n \}$. Dizemos que $X$ segue o modelo uniforme discreto se
-\[ \forall\: i \in \{ 1, \hdots, n \} :\> P(X = x_i) = \frac{1}{n} \]
+\[ \forall\: x \in R_X :\> P(X = x) = \frac{1}{n} \]
 Denota-se $X \sim U\{x_1, \hdots, x_n\}$. \\[10pt]
 Propriedades:
 \begin{itemize}
-  \item $\sum\limits_{i=1}^{n} \frac{1}{n} \quad=\quad \sum\limits_{i=1}^{n} P(X = x_i) \quad=\quad 1$
+  \item $E(X) = \sum\limits_{i=1}^{n} \dfrac{x_i}{n}$
   \item $\text{var}(X) = \dfrac{\sum\limits_{i=1}^{n} {x_i}^2}{n} - {\left( \dfrac{\sum\limits_{i=1}^{n} x_i}{n} \right)}^2$
 \end{itemize}
 
-\subsubsection{Modelo de Bernoulli}
+
+\pagebreak
+
+
+\subsection{Modelo de Bernoulli}
 Seja $X$ uma variável aleatória com $R_X = \{ x_1, x_2 \}$, sendo $x_1$ o sucesso do experimento, e $x_2$ o fracasso. \\
 Dizemos que $X$ segue o modelo discreto de Bernoulli com parâmetro $p$ se
 \[ 0 < p < 1 \]
@@ -168,7 +225,8 @@ Propriedades:
   \item $\text{var}(X) = p$
 \end{itemize}
 
-\subsubsection{Modelo Binomial}
+
+\subsection{Modelo Binomial}
 Seja $X$ uma variável aleatória que conta os sucessos em $n$ experimentos de Bernoulli($p$). \\
 A probabilidade de $k$ sucessos é
 \[ P(X = k) \>=\> {n \choose k} \cdot p^k \cdot {(1 - p)}^{(n - k)} \]
@@ -179,7 +237,8 @@ Propriedades:
   \item $\text{var}(X) = np \cdot (1 - p)$
 \end{itemize}
 
-\subsubsection{Modelo Geométrico}
+
+\subsection{Modelo Geométrico}
 Seja $X$ uma variável aleatória que conta as amostras até o primeiro sucesso em experimentos de Bernoulli($p$). \\
 A probabilidade de $k$ amostras até o sucesso é
 \[ P(X = k) \>=\> p \cdot {(1 - p)}^{(k - 1)} \]
@@ -190,9 +249,11 @@ Propriedades:
   \item $\text{var}(X) = \dfrac{1 - p}{p^2}$
 \end{itemize}
 
+
 \pagebreak
 
-\subsubsection{Modelo Binomial Negativo}
+
+\subsection{Modelo Binomial Negativo}
 Seja $X$ uma variável aleatória que conta os sucessos em experimentos de Bernoulli($p$). \\
 A probabilidade de $k$ amostras até se obter $r$ sucessos é
 \[ P(X = k) \>=\> {{k -1} \choose {r - 1}} \cdot p^r \cdot {(1 - p)}^{(k - r)} \]
@@ -203,7 +264,8 @@ Propriedades:
   \item $\text{var}(X) = \dfrac{r \cdot (1 - p)}{p^2}$
 \end{itemize}
 
-\subsubsection{Modelo Hipergeométrico}
+
+\subsection{Modelo Hipergeométrico}
 Considere $N$ objetos, dos quais $K$ são do tipo $\Gamma$ e os demais de outro tipo. \\
 Seja $X$ uma variável aleatória que conta o número de objetos do tipo $\Gamma$ em uma amostra de $n$ objetos. \\
 A probabilidade de haver $k$ objetos deste tipo na amostra é
@@ -215,10 +277,43 @@ Propriedades:
   \item $\text{var}(X) = \dfrac{nK}{N} \cdot \left( 1 - \dfrac{nK}{N} \right) \cdot \dfrac{N - n}{N - 1}$
 \end{itemize}
 
+
+\subsection{Modelo de Poisson}
+Seja $X$ uma variável aleatória tendo como imagem o conjunto $\mathbb{N}$. \\
+Dizemos que $X$ segue o modelo de Poisson com parâmetro $\lambda$ se
+\[ \lambda > 0 \]
+\[ P(X = k) \>=\> \frac{e^{-\lambda} \cdot \lambda^k}{k!} \]
+Denota-se $X \sim \text{P}(\lambda)$. \\[10pt]
+Propriedades:
+\begin{itemize}
+  \item $E(X) = \lambda$
+  \item $\text{var}(X) = \lambda$
+\end{itemize}
+
+
+
+\section{Modelos Contínuos}
+
+\subsection{Modelo Uniforme}
+Seja $X$ uma variável aleatória contínua com função de densidade $f(x)$. \\
+Dizemos que $X$ segue o modelo uniforme no intervalo $[a,b\hspace{0.1pt}]$ se sua função de densidade é
+\[
+  f(x) = \begin{cases}
+          \dfrac{1}{b - a} \quad a \leq x \leq b \\[10pt]
+          \quad 0 \qquad \text{caso contrário}
+         \end{cases} \\[10pt]
+\]
+Denota-se $X \sim U(a, b)$. \\[10pt]
+Propriedades:
+\begin{itemize}
+  \item $E(X) = \dfrac{a + b}{2}$
+  \item $\text{var}(X) = \dfrac{{(b - a)}^2}{12}$
+\end{itemize}
+
 %% old --------------------------------------------------------------------
 \vspace{10pt}\hrule
 
-\subsection{Famílias de Eventos}
+\section{Famílias de Eventos}
 Uma família de eventos é um conjunto de eventos. \\
 A maior família de eventos é o conjunto potência de $\Omega$, denotado $\mathcal{P}(\Omega)$. \\[5pt]
 Propriedades das famílias de eventos:
@@ -229,11 +324,13 @@ Propriedades das famílias de eventos:
 \end{itemize}
 
 
-\subsection{Espaço de Probabilidade}
+
+\section{Espaço de Probabilidade}
 Um espaço de probabilidade é uma tripla da forma $(\Omega, \mathcal{F}, P)$. \\
 O espaço é associado à uma experiência aleatória.
 
-\subsubsection{Espaços Equiprováveis}
+
+\subsection{Espaços Equiprováveis}
 Um espaço de probabilidade $(\Omega, \mathcal{F}, P)$ é equiprovável quando
 \[ \forall \, a, b \in \Omega: \> P({a}) = P({b}) = \frac{1}{\mid \Omega \mid} \]
 
@@ -241,7 +338,7 @@ Um espaço de probabilidade $(\Omega, \mathcal{F}, P)$ é equiprovável quando
 % var aleatoria
 % distrib
 
-\subsection{Densidade}
+\section{Densidade}
 A probabilidade de uma variável \uline{contínua} estar em um invervalo $[a,b]$ é
 \[ P(a \leq X \leq b) = \int_b^a f(x) dx, \qquad f: \mathbb{R} \to \mathbb{R}^+ \]
 onde $f$ é a função de densidade de probabilidade associada a $X$. \\[10pt]
@@ -253,7 +350,7 @@ Uma função de densidade de probabilidade satisfaz as propriedades:
 \uline{Teorema}: Para qualquer distribuição, a probabilidade de uma variável aleatória estar em um intervalo é
 \[ P(m \leq x \leq n) = f(n) - f(m) \]
 
-\subsubsection{Distribuição Uniforme}
+\subsection{Distribuição Uniforme}
 A função densidade para uma ditribuição uniforme é
 \[
   f(x) = \begin{cases}
@@ -269,13 +366,11 @@ Já para uma distribuição uniforme reduzida a um intervalo $[a,b] \subset \mat
          \end{cases} \\[10pt]
 \]
 
-\pagebreak
-
 % esperança
 % variancia
 % dp
 
-\subsection{Densidade Normal Geral}
+\section{Densidade Normal Geral}
 \begin{gather*}
   X \sim N(\mu, \sigma^2) \\[5pt]
   f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} \cdot \exp \left(- \frac{{(x - u)}^2}{2\sigma^2} \right)
