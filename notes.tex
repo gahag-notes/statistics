@@ -198,7 +198,7 @@ O desvio padrão de uma variável aleatória $X$ é
 \subsection{Modelo Uniforme}
 Seja $X$ uma variável aleatória com $R_X = \{ x_1, \hdots, x_n \}$. Dizemos que $X$ segue o modelo uniforme discreto se
 \[ \forall\: x \in R_X :\> P(X = x) = \frac{1}{n} \]
-Denota-se $X \sim U\{x_1, \hdots, x_n\}$. \\[10pt]
+Denota-se $X \sim \text{U}\{x_1, \hdots, x_n\}$. \\[10pt]
 Propriedades:
 \begin{itemize}
   \item $E(X) = \sum\limits_{i=1}^{n} \dfrac{x_i}{n}$
@@ -294,21 +294,63 @@ Propriedades:
 
 \section{Modelos Contínuos}
 
+
 \subsection{Modelo Uniforme}
-Seja $X$ uma variável aleatória contínua com função de densidade $f(x)$. \\
+Seja $X$ uma variável aleatória com função de densidade $f(x)$. \\
 Dizemos que $X$ segue o modelo uniforme no intervalo $[a,b\hspace{0.1pt}]$ se sua função de densidade é
 \[
   f(x) = \begin{cases}
-          \dfrac{1}{b - a} \quad a \leq x \leq b \\[10pt]
-          \quad 0 \qquad \text{caso contrário}
+          \dfrac{1}{b - a} & a \leq x \leq b \\[10pt]
+          \hfil 0 & \text{caso contrário}
          \end{cases} \\[10pt]
 \]
-Denota-se $X \sim U(a, b)$. \\[10pt]
+Denota-se $X \sim \text{U}(a, b)$. \\[10pt]
 Propriedades:
 \begin{itemize}
   \item $E(X) = \dfrac{a + b}{2}$
   \item $\text{var}(X) = \dfrac{{(b - a)}^2}{12}$
 \end{itemize}
+
+
+\subsection{Modelo Exponencial}
+Seja $X$ uma variável aleatória com função de densidade $f(x)$. \\
+Dizemos que $X$ segue o modelo exponencial com parâmetro $\lambda$ se
+\begin{gather*}
+  \lambda > 0 \\[5pt]
+  f(x) = \begin{cases}
+          \lambda \cdot e^{(-\lambda \cdot x)} &a \leq x \leq b \\[10pt]
+          \hfil 0 &\text{caso contrário}
+         \end{cases}
+\end{gather*}
+Denota-se $X \sim \text{Exp}(\lambda)$. \\[10pt]
+Propriedades:
+\begin{itemize}
+  \item $E(X) = \dfrac{1}{\lambda}$
+  \item $\text{var}(X) = \dfrac{1}{\lambda^2}$
+  \item $P\left(X > (s + t) \:\big|\: X > s \right) = P(X > t)$
+\end{itemize}
+
+\pagebreak
+
+
+\subsection{Modelo Normal}
+Seja $X$ uma variável aleatória com função de densidade $f(x)$. \\
+Dizemos que $X$ segue o modelo normal com parâmetros $\mu$ e $\sigma^2$ se
+\begin{gather*}
+  \sigma^2 > 0 \\[5pt]
+  f(x) = \frac{1}{\sigma \cdot \sqrt{2\pi}} \cdot\, \exp \left( -\dfrac{{(x - \mu)}^2}{2 \sigma^2} \right)
+\end{gather*}
+Denota-se $X \sim \text{N}\left(\mu, \sigma^2\right)$. \\[10pt]
+Propriedades:
+\begin{itemize}
+  \item $E(X) = \mu$
+  \item $\text{var}(X) = \sigma^2$
+\end{itemize}
+
+\subsubsection{Normal Padrão}
+Dizemos que $X$ segue o modelo normal padrão se $X \sim \text{N}\left(0, 1\right)$. \\[10pt]
+\uline{Teorema}: Se $X \sim \text{N}\left(\mu, \sigma^2\right)$, então
+\[ \left( Z = \frac{X - \mu}{\sigma} \right) \sim \text{N}\left(0, 1\right) \]
 
 %% old --------------------------------------------------------------------
 \vspace{10pt}\hrule
