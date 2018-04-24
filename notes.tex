@@ -279,7 +279,8 @@ Propriedades:
 
 
 \subsection{Modelo de Poisson}
-Seja $X$ uma variável aleatória tendo como imagem o conjunto $\mathbb{N}$. \\
+Considere $A$ como um evento de ocorrência independente de si mesmo. \\
+Seja $X$ uma variável aleatória que conta as ocorrências de $A$ em um determinado intervalo de tempo. \\
 Dizemos que $X$ segue o modelo de Poisson com parâmetro $\lambda$ se
 \[ \lambda > 0 \]
 \[ P(X = k) \>=\> \frac{e^{-\lambda} \cdot \lambda^k}{k!} \]
@@ -313,7 +314,7 @@ Propriedades:
 
 
 \subsection{Modelo Exponencial}
-Seja $X$ uma variável aleatória com função de densidade $f(x)$. \\
+Seja $X$ uma variável aleatória que descreve o tempo decorrido até um evento (normalmente falha/defeito). \\
 Dizemos que $X$ segue o modelo exponencial com parâmetro $\lambda$ se
 \begin{gather*}
   \lambda > 0 \\[5pt]
@@ -327,14 +328,11 @@ Propriedades:
 \begin{itemize}
   \item $E(X) = \dfrac{1}{\lambda}$
   \item $\text{var}(X) = \dfrac{1}{\lambda^2}$
-  \item $P\left(X > (s + t) \:\big|\: X > s \right) = P(X > t)$
+  \item $P\left(X > (s + t) \:\big|\: X > s \right) = P(X > t)$ \quad\qquad perda de memória.
 \end{itemize}
 
-\pagebreak
-
-
 \subsection{Modelo Normal}
-Seja $X$ uma variável aleatória com função de densidade $f(x)$. \\
+Seja $X$ uma variável aleatória que modela algum evento natural ou relacionado à natureza. \\
 Dizemos que $X$ segue o modelo normal com parâmetros $\mu$ e $\sigma^2$ se
 \begin{gather*}
   \sigma^2 > 0 \\[5pt]
@@ -351,73 +349,6 @@ Propriedades:
 Dizemos que $X$ segue o modelo normal padrão se $X \sim \text{N}\left(0, 1\right)$. \\[10pt]
 \uline{Teorema}: Se $X \sim \text{N}\left(\mu, \sigma^2\right)$, então
 \[ \left( Z = \frac{X - \mu}{\sigma} \right) \sim \text{N}\left(0, 1\right) \]
-
-%% old --------------------------------------------------------------------
-\vspace{10pt}\hrule
-
-\section{Famílias de Eventos}
-Uma família de eventos é um conjunto de eventos. \\
-A maior família de eventos é o conjunto potência de $\Omega$, denotado $\mathcal{P}(\Omega)$. \\[5pt]
-Propriedades das famílias de eventos:
-\begin{itemize}
-  \item $\Omega \in \mathcal{F}$
-  \item $A \in \mathcal{F} \implies A^c \in \mathcal{F}$
-  \item $A, B \in \mathcal{F} \implies (A \cup B) \in \mathcal{F}$
-\end{itemize}
-
-
-
-\section{Espaço de Probabilidade}
-Um espaço de probabilidade é uma tripla da forma $(\Omega, \mathcal{F}, P)$. \\
-O espaço é associado à uma experiência aleatória.
-
-
-\subsection{Espaços Equiprováveis}
-Um espaço de probabilidade $(\Omega, \mathcal{F}, P)$ é equiprovável quando
-\[ \forall \, a, b \in \Omega: \> P({a}) = P({b}) = \frac{1}{\mid \Omega \mid} \]
-
-
-% var aleatoria
-% distrib
-
-\section{Densidade}
-A probabilidade de uma variável \uline{contínua} estar em um invervalo $[a,b]$ é
-\[ P(a \leq X \leq b) = \int_b^a f(x) dx, \qquad f: \mathbb{R} \to \mathbb{R}^+ \]
-onde $f$ é a função de densidade de probabilidade associada a $X$. \\[10pt]
-Uma função de densidade de probabilidade satisfaz as propriedades:
-\begin{itemize}
-  \item $\forall\, x \in \mathbb{R}: f(x) \geq 0$.
-  \item $\int\limits_{-\infty}^{\infty} f(x) dx = 1$.
-\end{itemize}
-\uline{Teorema}: Para qualquer distribuição, a probabilidade de uma variável aleatória estar em um intervalo é
-\[ P(m \leq x \leq n) = f(n) - f(m) \]
-
-\subsection{Distribuição Uniforme}
-A função densidade para uma ditribuição uniforme é
-\[
-  f(x) = \begin{cases}
-          \dfrac{1}{\omega} \quad 0 \leq x \leq \omega \\[10pt]
-          0 \quad \text{caso contrário}
-         \end{cases}
-\]
-Já para uma distribuição uniforme reduzida a um intervalo $[a,b] \subset \mathbb{R}$
-\[
-  f(x) = \begin{cases}
-          \dfrac{1}{b - a} \quad a \leq x \leq b \\[10pt]
-          0 \qquad \text{caso contrário}
-         \end{cases} \\[10pt]
-\]
-
-% esperança
-% variancia
-% dp
-
-\section{Densidade Normal Geral}
-\begin{gather*}
-  X \sim N(\mu, \sigma^2) \\[5pt]
-  f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} \cdot \exp \left(- \frac{{(x - u)}^2}{2\sigma^2} \right)
-\end{gather*}
-
 
 
 \end{document}
