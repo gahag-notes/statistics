@@ -35,7 +35,10 @@
     \multicolumn{2}{l}{A probabilidade é o estudo das experiências aleatórias.} \\[5pt]
     Experimento aleatório & Experimento cujo resultado não pode ser previsto com exatidão. \\[1pt]
     Espaço amostral ($\Omega$) & O conjunto de \uline{todos} os resultados possíveis em uma experiência. \\[1pt]
-    Evento & Um subconjunto de $\Omega$. \\[1pt]
+    Evento & Um subconjunto de $\Omega$. \\[3pt]
+    População & Conjunto de \uline{todos} os elementos candidatos à observação \\[1pt]
+    Amostra & Parte da população que é observada \\
+    Classe & Subdivisão da amostra
   \end{tabular}
 \end{table} \vspace{-10pt}
 
@@ -90,8 +93,8 @@ Propriedade: Se $A$ e $B$ são independentes, então os seguintes conjuntos são
 
 
 
-\section{Variáveis Aleatórias}
-Uma variável aleatória é uma função que associa alguma propriedade de um resultado de um experimento aleatório à um número real.
+\section{Variáveis Aleatórias Quantitativas}
+Uma variável aleatória quantitativa é uma função que associa alguma propriedade de um resultado de um experimento aleatório à um número real.
 \[ X: \Omega \to \mathbb{R} \]
 A imagem de uma variável aleatória $X$ é denotada por $R_X$. \\[5pt]
 Se $R_X$ é um conjunto enumerável, dizemos que esta variável é \uline{discreta}. \\
@@ -349,6 +352,41 @@ Propriedades:
 Dizemos que $X$ segue o modelo normal padrão se $X \sim \text{N}\left(0, 1\right)$. \\[10pt]
 \uline{Teorema}: Se $X \sim \text{N}\left(\mu, \sigma^2\right)$, então
 \[ \left( Z = \frac{X - \mu}{\sigma} \right) \sim \text{N}\left(0, 1\right) \]
+
+
+\section{Variáveis Aleatórias Qualitativas}
+Uma variável aleatória qualitativa é uma função que associa um resultado aleatório a um nome. \\[5pt]
+A imagem de uma variável aleatória $X$ é denotada por $R_X$. \\[5pt]
+Se $R_X$ é um conjunto ordenável, dizemos que esta variável é \uline{ordinal}. \\
+Se $R_X$ é um conjunto \uline{não} ordenável, dizemos que esta variável é \uline{nominal}. \\
+
+
+\section{Frequências}
+\vspace{-10pt}
+\begin{table}[h]
+  \begin{tabular}{lll}
+    \multicolumn{3}{l}{\hspace{-6pt}Frequências de uma classe $i$ em uma amostra de tamanho $n$} \\ \midrule
+    Frequência & \makebox[80pt]{\centering $n_i$} & \\[5pt]
+    Acumulada  & \makebox[80pt]{\centering $N_i = \sum\limits_{j = 1}^{i} n_j$} & \\[15pt]
+    Relativa   & \makebox[80pt]{\centering $f_i = \dfrac{n_i}{n}$} & \\[10pt]
+    Relativa acumulada & \makebox[80pt]{\centering $F_i = \sum\limits_{j = 1}^{i} f_j$}
+  \end{tabular}
+\end{table}
+\noindent A curva correspondente ao histograma de frequências relativas acumuladas é denominada \uline{ogiva}. \\[5pt]
+A ogiva aproxima a função de distribuição de probabilidade.
+
+
+\section{Medidas de tendência central}
+\vspace{-10pt}
+\begin{table}[h]
+  \begin{tabular}{ll}
+    \multicolumn{2}{l}{\hspace{-6pt}Medidas de tendência central} \\ \midrule
+    Média & média aritmética \uline{ponderada} \\[2pt]
+    Mediana & valor central, tal que 50\% dos valores são inferiores \\[2pt]
+    Primeiro quartil & valor que define um quarto, tal que 25\% dos valores são inferiores \\[2pt]
+    Terceiro quartil & valor que define três quartos, tal que 75\% dos valores são inferiores
+  \end{tabular}
+\end{table}
 
 
 \end{document}
